@@ -1,0 +1,74 @@
+#include <bits/stdc++.h>
+#include <iostream>
+using namespace std;
+#define ll long long int
+#define speed ios_base::sync_with_stdio(false);   cin.tie(NULL);   cout.tie(NULL);
+#define endl "\n"
+#define mod 1000000007
+
+void bhupender()
+{
+    int n;
+    cin>>n;
+    int a[n][n];
+    if(n==1)
+        cout<<1<<endl;
+    else if(n==2)
+        cout<<-1<<endl;
+    else
+    {
+        int v1=1,v2=0,i=0,j=0;
+        if(n%2==0)
+            v2=n*n/2+1;
+        else
+            v2=n*n/2+2;
+        for(i=0; i<n; i++)
+        {
+            if(i%2==0)
+            {
+                for(j=0; j<n; j++)
+                {
+                    if(j%2==0)
+                    {
+                        cout<<v1<<" ";
+                        v1++;
+                    }
+                    else
+                    {
+                        cout<<v2<<" ";
+                        v2++;
+                    }
+                }
+                cout<<endl;
+            }
+            else
+            {
+                for(j=0; j<n; j++)
+                {
+                    if(j%2==0)
+                    {
+                        cout<<v2<<" ";
+                        v2++;
+                    }
+                    else
+                    {
+                        cout<<v1<<" ";
+                        v1++;
+                    }
+                }
+                cout<<endl;
+            }
+        }
+    }
+}
+
+int main()
+{
+    // your code goes here
+    speed
+    int t;
+    cin>>t;
+    while(t--)
+        bhupender();
+    return 0;
+}
